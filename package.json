@@ -1,0 +1,44 @@
+{
+  "name": "howlongtobeat",
+  "version": "1.2.1",
+  "main": "dist/main/howlongtobeat.js",
+  "author": "Christian Katzorke <ckatzorke@gmail.com>",
+  "license": "WTFPL",
+  "scripts": {
+    "build": "tsc",
+    "pretest": "tsc --sourcemap",
+    "test": "jest",
+    "integrationtest": "nyc mocha dist/test/*.integration.test.js",
+    "posttest": "nyc report --reporter=json && codecov -f coverage/*.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckatzorke/howlongtobeat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ckatzorke/howlongtobeat/issues"
+  },
+  "homepage": "https://github.com/ckatzorke/howlongtobeat",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.2",
+    "fast-levenshtein": "^2.0.6",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.5.2",
+    "@types/chai-as-promised": "^0.0.30",
+    "@types/jest": "^26.0.20",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.10.14",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "codecov": "^3.7.1",
+    "hoek": "^5.0.4",
+    "jest": "^26.6.3",
+    "mocha": "^8.2.1",
+    "nyc": "^15.0.0",
+    "ts-jest": "^26.4.4",
+    "typescript": "^2.9.2"
+  }
+}
